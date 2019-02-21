@@ -1,6 +1,11 @@
 import React, { Component } from "react";
+import { Switch, Route } from "react-router-dom";
 
 import "./App.css";
+import AboutUs from "./components/AboutUs.js";
+import HomePage from "./components/HomePage.js";
+import ProjectList from "./components/ProjectList";
+import NotFound from "./components/NotFound";
 
 class App extends Component {
   render() {
@@ -11,7 +16,26 @@ class App extends Component {
 
           <nav>Under construction...</nav>
         </header>
-        Content that changes between pages...
+
+        {/*
+         * Switch defines a part of your app that changes based on the URL
+         * (only chooses one piece of content in the list)
+         */}
+        <Switch>
+          {/*
+           * each Route defines one potential content that could appear
+           * (it associates a URL with a component)
+           */}
+          {/* your path="/" Route ALWAYS needs the exact prop */}
+          <Route exact path="/" component={HomePage} />
+
+          <Route path="/about" component={AboutUs} />
+          <Route path="/project-list" component={ProjectList} />
+
+          {/* ALWAYS put your 404 route LAST */}
+          <Route component={NotFound} />
+        </Switch>
+
         <footer>
           <p>Made with 🤖 at Ironhack</p>
         </footer>
