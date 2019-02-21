@@ -4,8 +4,9 @@ import { Switch, Route, NavLink } from "react-router-dom";
 import "./App.css";
 import AboutUs from "./components/AboutUs.js";
 import HomePage from "./components/HomePage.js";
-import ProjectList from "./components/ProjectList";
-import NotFound from "./components/NotFound";
+import ProjectList from "./components/ProjectList.js";
+import NotFound from "./components/NotFound.js";
+import ProjectDetails from "./components/ProjectDetails.js";
 
 class App extends Component {
   render() {
@@ -45,6 +46,7 @@ class App extends Component {
 
           <Route path="/about" component={AboutUs} />
           <Route path="/project-list" component={ProjectList} />
+          <Route path="/project/:projectId" component={ProjectDetails} />
 
           {/* ALWAYS put your 404 route LAST */}
           <Route component={NotFound} />
@@ -52,6 +54,18 @@ class App extends Component {
 
         <footer>
           <p>Made with 🤖 at Ironhack</p>
+
+          {/* You can put a Switch anywhere in your code */}
+          <Switch>
+            <Route
+              path="/project"
+              // Use render instead of component to define the HTML directly
+              // (or the send your own PROPS to the the component)
+              render={() => {
+                return <p>WARNING: These Projects Are FAKE.</p>;
+              }}
+            />
+          </Switch>
         </footer>
       </div>
     );
