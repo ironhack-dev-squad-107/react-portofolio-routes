@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Switch, Route } from "react-router-dom";
+import { Switch, Route, NavLink } from "react-router-dom";
 
 import "./App.css";
 import AboutUs from "./components/AboutUs.js";
@@ -14,7 +14,21 @@ class App extends Component {
         <header>
           <h1>Portfolio Site of Nizar</h1>
 
-          <nav>Under construction...</nav>
+          <nav>
+            {/* Use NavLink or Link for cool React navigation with NO REFRESH
+             * (NavLink adds a special "active" class to the current page)
+             */}
+            {/* <a href="/">Home</a> */}
+            <NavLink exact to="/">
+              Home
+            </NavLink>
+
+            {/* <a href="/about">About Me</a> */}
+            <NavLink to="/about">About Me</NavLink>
+
+            {/* <a href="/project-list">Projects</a> */}
+            <NavLink to="/project-list">Projects</NavLink>
+          </nav>
         </header>
 
         {/*
