@@ -7,6 +7,7 @@ import HomePage from "./components/HomePage.js";
 import ProjectList from "./components/ProjectList.js";
 import NotFound from "./components/NotFound.js";
 import ProjectDetails from "./components/ProjectDetails.js";
+import TempCalc from "./components/TempCalc";
 
 class App extends Component {
   render() {
@@ -29,6 +30,7 @@ class App extends Component {
 
             {/* <a href="/project-list">Projects</a> */}
             <NavLink to="/project-list">Projects</NavLink>
+            <NavLink to="/temperature">Temperature Calculator</NavLink>
           </nav>
         </header>
 
@@ -47,6 +49,7 @@ class App extends Component {
           <Route path="/about" component={AboutUs} />
           <Route path="/project-list" component={ProjectList} />
           <Route path="/project/:projectId" component={ProjectDetails} />
+          <Route path="/temperature" component={TempCalc} />
 
           {/* ALWAYS put your 404 route LAST */}
           <Route component={NotFound} />
