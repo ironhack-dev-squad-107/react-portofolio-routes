@@ -7,7 +7,8 @@ import HomePage from "./components/HomePage.js";
 import ProjectList from "./components/ProjectList.js";
 import NotFound from "./components/NotFound.js";
 import ProjectDetails from "./components/ProjectDetails.js";
-import TempCalc from "./components/TempCalc";
+import TempCalc from "./components/TempCalc.js";
+import PokemonSearch from "./components/PokemonSearch.js";
 
 class App extends Component {
   render() {
@@ -31,6 +32,7 @@ class App extends Component {
             {/* <a href="/project-list">Projects</a> */}
             <NavLink to="/project-list">Projects</NavLink>
             <NavLink to="/temperature">Temperature Calculator</NavLink>
+            <NavLink to="/pokemon">Pokemon Search</NavLink>
           </nav>
         </header>
 
@@ -50,6 +52,7 @@ class App extends Component {
           <Route path="/project-list" component={ProjectList} />
           <Route path="/project/:projectId" component={ProjectDetails} />
           <Route path="/temperature" component={TempCalc} />
+          <Route path="/pokemon" component={PokemonSearch} />
 
           {/* ALWAYS put your 404 route LAST */}
           <Route component={NotFound} />
